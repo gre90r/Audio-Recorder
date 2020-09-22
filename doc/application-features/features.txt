@@ -1,0 +1,26 @@
+
+-> record Audio
+    -> record everything that goes through default Audio Output
+-> UI
+    -> Start & Stop recording whenever the user wants it
+        -> is a start button called "Record". After "Record" has been pressed
+           the button changes to "Stop Recording".
+    -> Visualize if something goes through Audio Output
+        -> visualize all the time, so the user knows, that he has the correct
+           Audio Device where something goes through
+    -> select from which Audio Device to record
+        -> so, you can also record from Input Device like microphone
+        -> default Audio Device is Default Audio Output
+-> Save recording after button "Stop Recording" has been pressed
+    -> save to a location the user wants
+-> Options
+    -> in extra window
+    -> checkable
+        -> Save to mp3
+            -> this is already checked and cannot be unchecked. It is an
+               information, what the application will do.
+        -> Keep wav file
+            -> this is unchecked at first start
+    -> has Save and Cancel button
+-> when recording a time is displayed for how long the application is
+   recording
