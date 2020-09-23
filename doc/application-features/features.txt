@@ -29,8 +29,14 @@
 #################
 # further ideas #
 #################
--> automatically set filename
-  -> this allows to make memos with microphone fast
-  -> filename is current date and time
--> record with timer
-  -> if you plan to record for e.g. exactly one hour
+-> Settings
+  -> automatically set filename
+    -> this allows to make memos with microphone fast
+    -> filename is current date and time
+  -> record with timer
+    -> if you plan to record for e.g. exactly one hour, recording
+       automatically stops after that time
+  -> checkable: keep wave file
+  -> disabled checked: save mp3
+    -> this checkbox is checked, but cannot be unchecked.
+       Is an information for the user.

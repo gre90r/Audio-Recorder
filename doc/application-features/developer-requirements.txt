@@ -1,5 +1,6 @@
 
 SQLite DB with JDBC
+-> save Settings in DB
 Selenium
 JaCoCo
-add linter hook at commit and push
+add linter hook to commit and push

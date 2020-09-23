@@ -3,7 +3,8 @@ package de.gre90r.controller;
 import javax.swing.*;
 
 /**
- * counts the recording time
+ * counts the recording time and displays
+ * it on UI.
  */
 public class Stopwatch implements Runnable {
 
