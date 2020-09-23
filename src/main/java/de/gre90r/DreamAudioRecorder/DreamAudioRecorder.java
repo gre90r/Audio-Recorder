@@ -1,8 +1,8 @@
-package de.gre90r;
+package de.gre90r.DreamAudioRecorder;
 
 import com.formdev.flatlaf.FlatLightLaf;
-import de.gre90r.config.WindowConfig;
-import de.gre90r.form.MainWindow;
+import de.gre90r.DreamAudioRecorder.config.WindowConfig;
+import de.gre90r.DreamAudioRecorder.form.MainWindow;
 
 import javax.swing.*;
 

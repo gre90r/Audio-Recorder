@@ -1,7 +1,9 @@
-package de.gre90r.controller;
+package de.gre90r.DreamAudioRecorder.controller;
 
-import de.gre90r.config.StringsEN;
+import de.gre90r.DreamAudioRecorder.config.StringsEN;
+import de.gre90r.DreamAudioRecorder.config.WindowConfig;
 
+import javax.sound.sampled.LineUnavailableException;
 import javax.swing.*;
 import java.awt.*;
 
@@ -11,6 +13,8 @@ import java.awt.*;
 public class Service {
 
   private Stopwatch stopwatch;
+  private AudioRecorder audioRecorder;
+  private boolean wasRecordingSuccessful = true;
 
   public Service() {
   }
@@ -18,14 +22,16 @@ public class Service {
   /**
    * 1) TODO: starts recording audio into a wave file
    * 2) TODO: visualizes audio stream
-   * 3) TODO: counts time how long the application is currently recording
+   * 3) counts time how long the application is currently recording
    * @param labelStatus holds info for user how long the application
    *                    currently records.
    * @param btnRecord the record button which changes its text after pressing
    * @param panelVisualizeAudio graphical area which visualizes audio data which
    *                            will be written
    */
-  public void recordAudio(JLabel labelStatus, JLabel labelRecordingTime, JButton btnRecord, JPanel panelVisualizeAudio) {
+  public void startRecording(JLabel labelStatus, JLabel labelRecordingTime, JButton btnRecord, JPanel panelVisualizeAudio) {
+    this.wasRecordingSuccessful = true;
+
     /* set UI components */
     btnRecord.setText(StringsEN.STOP_RECORDING);
     btnRecord.setBackground(new Color(0, 200, 0));
@@ -33,6 +39,20 @@ public class Service {
 
     /* start stopwatch */
     startStopwatch(labelStatus, labelRecordingTime);
+
+    /* record */
+    // create AudioRecorder
+    try {
+      this.audioRecorder = new AudioRecorder();
+      this.audioRecorder.startRecording();
+    } catch (LineUnavailableException e) {
+      // TODO: test this behavior
+      this.wasRecordingSuccessful = false;
+      JOptionPane.showMessageDialog(null,
+              StringsEN.CANNOT_START_RECORDING + ". " + e.getMessage(),
+              WindowConfig.APP_NAME, JOptionPane.ERROR_MESSAGE);
+      stopRecording(labelStatus, labelRecordingTime, btnRecord, panelVisualizeAudio);
+    }
   }
 
   /**
@@ -63,8 +83,22 @@ public class Service {
     labelStatus.setText(StringsEN.STATUS_READY);
     labelRecordingTime.setText("");
 
-    /* stop stopwatch */
     stopStopwatch();
+    this.audioRecorder.stopRecording();
+    displaySuccessMessage();
+  }
+
+  /**
+   * if no error has been occurred, displays a success
+   * message where the file has been saved
+   * TODO: test if the whole path is being displayed
+   */
+  private void displaySuccessMessage() {
+    if (this.wasRecordingSuccessful) {
+      JOptionPane.showMessageDialog(null,
+              StringsEN.AUDIO_HAS_BEEN_RECORDED_TO + " " + StringsEN.filenameRecording,
+              WindowConfig.APP_NAME, JOptionPane.INFORMATION_MESSAGE);
+    }
   }
 
   /**

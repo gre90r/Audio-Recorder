@@ -1,7 +1,6 @@
-package de.gre90r.config;
+package de.gre90r.DreamAudioRecorder.config;
 
 import javax.sound.sampled.AudioFormat;
-import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
 
@@ -14,10 +13,10 @@ import java.util.List;
 class AudioFormatConfig {
   /* supported formats */
   public static final List<Float> SUPPORTED_SAMPLE_RATES = Arrays.asList(16000f, 44100f);
-  public static final List<Integer> SUPPORTED_SAMPLE_SIZE_BITS = Arrays.asList(8, 16);
-  public static final List<Integer> SUPPORTED_CHANNELS = Arrays.asList(1, 2);
-  public static final List<Integer> SUPPORTED_FRAME_SIZE = Arrays.asList(4);
-  public static final List<Float> SUPPORTED_FRAME_RATE = new ArrayList<>(SUPPORTED_SAMPLE_RATES);
+//  public static final List<Integer> SUPPORTED_SAMPLE_SIZE_BITS = Arrays.asList(8, 16);
+//  public static final List<Integer> SUPPORTED_CHANNELS = Arrays.asList(1, 2);
+//  public static final List<Integer> SUPPORTED_FRAME_SIZE = Arrays.asList(4);
+//  public static final List<Float> SUPPORTED_FRAME_RATE = new ArrayList<>(SUPPORTED_SAMPLE_RATES);
 
   /* Audio Format */
   public static AudioFormat.Encoding encoding = AudioFormat.Encoding.PCM_SIGNED;

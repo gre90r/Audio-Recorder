@@ -1,4 +1,4 @@
-package de.gre90r;
+package de.gre90r.DreamAudioRecorder;
 
 import junit.framework.Test;
 import junit.framework.TestCase;

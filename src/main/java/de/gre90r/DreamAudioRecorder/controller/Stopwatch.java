@@ -1,4 +1,4 @@
-package de.gre90r.controller;
+package de.gre90r.DreamAudioRecorder.controller;
 
 import javax.swing.*;
 

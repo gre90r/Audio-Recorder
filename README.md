@@ -1,18 +1,20 @@
 TODO: add badge "Tests passing"
 
 # Dream Audio Recorder
-Record audio on your computer. On default, it listens what goes
-through your default Audio Output, but you can freely pick
-the Audio Device, meaning that you can also record your voice
-from a microphone.
+Record audio on your computer. On default, it listens to your
+microphone, but you can freely pick the Audio Device, meaning
+that you can also record your system sound (*record system
+sound is TODO*).
 
-![doc/images/main-window.jpeg](doc/images/main-window.jpeg)
+![doc/images/dream-audio-recorder.png](doc/images/dream-audio-recorder.png)
 
 # 1 Downloads
-TODO: add Downloads
+*TODO: add Downloads*
 
 # 2 Dependencies
 * Java 11
+    * I used JDK 11 for development, but should also run with
+      Java 8. 
 * Java Swing
 
 # 3 Build from source
@@ -27,11 +29,16 @@ TODO: add Downloads
 # 4 Run tests
 `./runTests.sh`
 
-# 5 Working with IntelliJ GUI Builder
+# 5 Code Coverage report
+*TODO*
+
+run `codeCoverageReport.sh`
+
+# 6 Working with IntelliJ GUI Builder
 if you continue working on the GUI from IntelliJ, you have to make
 sure, that all GUI Builder code is inside your source file. Go to
 *File > Settings > Editor > GUI Designer > Generate GUI into: 
 Java source code*.
 
-# 6 License
-TODO: check license for mp3 library
+# 7 License
+TODO: check license for mp3 library when implementing it.

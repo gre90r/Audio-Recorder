@@ -1,11 +1,11 @@
 /******************************************************/
 /* this file is mainly edited by IntelliJ GUI Builder */
 /******************************************************/
-package de.gre90r.form;
+package de.gre90r.DreamAudioRecorder.form;
 
 import com.intellij.uiDesigner.core.GridConstraints;
 import com.intellij.uiDesigner.core.GridLayoutManager;
-import de.gre90r.controller.Service;
+import de.gre90r.DreamAudioRecorder.controller.Service;
 import lombok.Getter;
 
 import javax.swing.*;
@@ -26,6 +26,7 @@ public class MainWindow {
   private JPanel panelVisualizeAudio;
   private JLabel labelRealTimeAudioVisualize;
   private JLabel labelRecordingTime;
+  private JLabel labelAudioDevice;
 
   /*********************/
   /* application logic */
@@ -44,7 +45,7 @@ public class MainWindow {
           isRecording = false;
         } else {
           // start recording
-          service.recordAudio(labelStatus, labelRecordingTime, btnRecord, panelVisualizeAudio);
+          service.startRecording(labelStatus, labelRecordingTime, btnRecord, panelVisualizeAudio);
           isRecording = true;
         }
       }
@@ -67,36 +68,39 @@ public class MainWindow {
    */
   private void $$$setupUI$$$() {
     panelMain = new JPanel();
-    panelMain.setLayout(new GridLayoutManager(8, 2, new Insets(20, 20, 20, 20), -1, -1));
+    panelMain.setLayout(new GridLayoutManager(9, 2, new Insets(20, 20, 20, 20), -1, -1));
     btnRecord = new JButton();
     btnRecord.setBackground(new Color(-65536));
     btnRecord.setForeground(new Color(-1));
     btnRecord.setText("Record");
-    panelMain.add(btnRecord, new GridConstraints(7, 0, 1, 2, GridConstraints.ANCHOR_CENTER, GridConstraints.FILL_HORIZONTAL, GridConstraints.SIZEPOLICY_CAN_SHRINK | GridConstraints.SIZEPOLICY_CAN_GROW, GridConstraints.SIZEPOLICY_FIXED, new Dimension(-1, 40), new Dimension(-1, 40), new Dimension(-1, 40), 0, false));
+    panelMain.add(btnRecord, new GridConstraints(8, 0, 1, 2, GridConstraints.ANCHOR_CENTER, GridConstraints.FILL_HORIZONTAL, GridConstraints.SIZEPOLICY_CAN_SHRINK | GridConstraints.SIZEPOLICY_CAN_GROW, GridConstraints.SIZEPOLICY_FIXED, new Dimension(-1, 40), new Dimension(-1, 40), new Dimension(-1, 40), 0, false));
     cbSelectAudioDevice = new JComboBox();
     final DefaultComboBoxModel defaultComboBoxModel1 = new DefaultComboBoxModel();
-    defaultComboBoxModel1.addElement("Select Audio Device");
+    defaultComboBoxModel1.addElement("Microphone");
     cbSelectAudioDevice.setModel(defaultComboBoxModel1);
-    panelMain.add(cbSelectAudioDevice, new GridConstraints(2, 0, 1, 2, GridConstraints.ANCHOR_WEST, GridConstraints.FILL_HORIZONTAL, GridConstraints.SIZEPOLICY_CAN_GROW, GridConstraints.SIZEPOLICY_FIXED, null, null, null, 0, false));
+    panelMain.add(cbSelectAudioDevice, new GridConstraints(3, 0, 1, 2, GridConstraints.ANCHOR_WEST, GridConstraints.FILL_HORIZONTAL, GridConstraints.SIZEPOLICY_CAN_GROW, GridConstraints.SIZEPOLICY_FIXED, null, null, null, 0, false));
     labelStatus = new JLabel();
     labelStatus.setText("Status: ready");
     panelMain.add(labelStatus, new GridConstraints(0, 1, 1, 1, GridConstraints.ANCHOR_EAST, GridConstraints.FILL_NONE, GridConstraints.SIZEPOLICY_FIXED, GridConstraints.SIZEPOLICY_FIXED, null, null, null, 0, false));
     panelVisualizeAudio = new JPanel();
     panelVisualizeAudio.setLayout(new GridLayoutManager(1, 1, new Insets(0, 0, 0, 0), -1, -1));
     panelVisualizeAudio.setBackground(new Color(-1));
-    panelMain.add(panelVisualizeAudio, new GridConstraints(5, 0, 1, 2, GridConstraints.ANCHOR_CENTER, GridConstraints.FILL_VERTICAL, GridConstraints.SIZEPOLICY_FIXED, GridConstraints.SIZEPOLICY_FIXED, new Dimension(440, 100), new Dimension(440, 100), new Dimension(440, 100), 0, false));
+    panelMain.add(panelVisualizeAudio, new GridConstraints(6, 0, 1, 2, GridConstraints.ANCHOR_CENTER, GridConstraints.FILL_VERTICAL, GridConstraints.SIZEPOLICY_FIXED, GridConstraints.SIZEPOLICY_FIXED, new Dimension(440, 100), new Dimension(440, 100), new Dimension(440, 100), 0, false));
     panelVisualizeAudio.setBorder(BorderFactory.createTitledBorder(BorderFactory.createLineBorder(Color.black), null, TitledBorder.DEFAULT_JUSTIFICATION, TitledBorder.DEFAULT_POSITION, null, null));
     labelRealTimeAudioVisualize = new JLabel();
-    labelRealTimeAudioVisualize.setText("Real time Audio Visualize");
-    panelMain.add(labelRealTimeAudioVisualize, new GridConstraints(4, 0, 1, 2, GridConstraints.ANCHOR_WEST, GridConstraints.FILL_NONE, GridConstraints.SIZEPOLICY_FIXED, GridConstraints.SIZEPOLICY_FIXED, null, null, null, 0, false));
+    labelRealTimeAudioVisualize.setText("Real Time Audio Visualize:");
+    panelMain.add(labelRealTimeAudioVisualize, new GridConstraints(5, 0, 1, 2, GridConstraints.ANCHOR_WEST, GridConstraints.FILL_NONE, GridConstraints.SIZEPOLICY_FIXED, GridConstraints.SIZEPOLICY_FIXED, null, null, null, 0, false));
     final JSeparator separator1 = new JSeparator();
     separator1.setEnabled(true);
-    panelMain.add(separator1, new GridConstraints(3, 0, 1, 2, GridConstraints.ANCHOR_CENTER, GridConstraints.FILL_BOTH, GridConstraints.SIZEPOLICY_WANT_GROW, GridConstraints.SIZEPOLICY_WANT_GROW, null, null, null, 0, false));
+    panelMain.add(separator1, new GridConstraints(4, 0, 1, 2, GridConstraints.ANCHOR_CENTER, GridConstraints.FILL_BOTH, GridConstraints.SIZEPOLICY_WANT_GROW, GridConstraints.SIZEPOLICY_WANT_GROW, null, null, null, 0, false));
     final JSeparator separator2 = new JSeparator();
-    panelMain.add(separator2, new GridConstraints(6, 0, 1, 2, GridConstraints.ANCHOR_CENTER, GridConstraints.FILL_BOTH, GridConstraints.SIZEPOLICY_WANT_GROW, GridConstraints.SIZEPOLICY_WANT_GROW, null, null, null, 0, false));
+    panelMain.add(separator2, new GridConstraints(7, 0, 1, 2, GridConstraints.ANCHOR_CENTER, GridConstraints.FILL_BOTH, GridConstraints.SIZEPOLICY_WANT_GROW, GridConstraints.SIZEPOLICY_WANT_GROW, null, null, null, 0, false));
     labelRecordingTime = new JLabel();
     labelRecordingTime.setText("");
     panelMain.add(labelRecordingTime, new GridConstraints(1, 1, 1, 1, GridConstraints.ANCHOR_EAST, GridConstraints.FILL_NONE, GridConstraints.SIZEPOLICY_FIXED, GridConstraints.SIZEPOLICY_FIXED, null, null, null, 0, false));
+    labelAudioDevice = new JLabel();
+    labelAudioDevice.setText("Audio Device:");
+    panelMain.add(labelAudioDevice, new GridConstraints(2, 0, 1, 1, GridConstraints.ANCHOR_WEST, GridConstraints.FILL_NONE, GridConstraints.SIZEPOLICY_FIXED, GridConstraints.SIZEPOLICY_FIXED, null, null, null, 0, false));
   }
 
   /**

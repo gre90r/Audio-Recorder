@@ -1,4 +1,4 @@
-package de.gre90r.config;
+package de.gre90r.DreamAudioRecorder.config;
 
 /**
  * application configuration

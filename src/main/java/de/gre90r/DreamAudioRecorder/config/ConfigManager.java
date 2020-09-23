@@ -1,4 +1,4 @@
-package de.gre90r.config;
+package de.gre90r.DreamAudioRecorder.config;
 
 import javax.sound.sampled.AudioFormat;
 
@@ -129,7 +129,7 @@ public class ConfigManager {
   public static float getFrameRate() {
     return AudioFormatConfig.frameRate;
   }
-  public static boolean isBigEndian() {
+  public static boolean getBigEndian() {
     return AudioFormatConfig.bigEndian;
   }
 
