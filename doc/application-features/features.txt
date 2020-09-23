@@ -24,3 +24,13 @@
     -> has Save and Cancel button
 -> when recording a time is displayed for how long the application is
    recording
+
+
+#################
+# further ideas #
+#################
+-> automatically set filename
+  -> this allows to make memos with microphone fast
+  -> filename is current date and time
+-> record with timer
+  -> if you plan to record for e.g. exactly one hour
