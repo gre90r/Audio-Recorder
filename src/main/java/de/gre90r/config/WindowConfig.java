@@ -3,7 +3,7 @@ package de.gre90r.config;
 /**
  * application configuration
  */
-public class Config {
+public class WindowConfig {
   /*****************************/
   /* main window configuration */
   /*****************************/

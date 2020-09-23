@@ -1,10 +1,7 @@
 package de.gre90r;
 
-import com.formdev.flatlaf.FlatDarculaLaf;
-import com.formdev.flatlaf.FlatDarkLaf;
-import com.formdev.flatlaf.FlatIntelliJLaf;
 import com.formdev.flatlaf.FlatLightLaf;
-import de.gre90r.config.Config;
+import de.gre90r.config.WindowConfig;
 import de.gre90r.form.MainWindow;
 
 import javax.swing.*;
@@ -21,19 +18,22 @@ public class DreamAudioRecorder  {
     createMainWindow();
   }
 
+  /**
+   *
+   */
   private static void createMainWindow() {
     setLookAndFeel();
 
-    JFrame frame = new JFrame(Config.APP_NAME);
+    JFrame frame = new JFrame(WindowConfig.APP_NAME);
     frame.setContentPane(new MainWindow().getPanelMain());
     frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-    frame.setSize(Config.WINDOW_WIDTH, Config.WINDOW_HEIGHT);
-    frame.setLocationRelativeTo(null);
+    frame.setSize(WindowConfig.WINDOW_WIDTH, WindowConfig.WINDOW_HEIGHT);
+    frame.setLocationRelativeTo(null); // center window
     frame.setVisible(true);
   }
 
   /**
-   * set the natural look of your operating system.
+   * set a UI stylesheet other than the standard Java look.
    */
   private static void setLookAndFeel() {
     FlatLightLaf.install();

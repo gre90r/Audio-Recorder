@@ -1,0 +1,5 @@
+
+SQLite DB with JDBC
+Selenium
+JaCoCo
+add linter hook at commit and push
