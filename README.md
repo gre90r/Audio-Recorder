@@ -1,4 +1,6 @@
-TODO: add badge "Tests passing"
+![Build](https://github.com/gre90r/Audio-Recorder/workflows/Build/badge.svg)
+![Tests](https://github.com/gre90r/Audio-Recorder/workflows/Tests/badge.svg)
+
 
 # Dream Audio Recorder
 Record audio on your computer. On default, it listens to your
