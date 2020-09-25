@@ -12,7 +12,7 @@ before_install:
   - sudo apt-get install -y libasound2-dev alsa-utils alsa-oss
   - sudo apt-get install -y lame
   - sudo apt-get install linux-modules-extra-$(uname -r)
-  - sudo bash test/prepare-dummy-soundcard.sh
+  - sudo bash ci-scripts/prepare-dummy-soundcard.sh
 
 env:
   global:
