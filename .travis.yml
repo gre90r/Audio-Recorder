@@ -15,7 +15,6 @@ before_install:
   - sudo apt-get install -y lame
   - sudo apt-get install linux-modules-extra-$(uname -r)
   - sudo bash ci-scripts/prepare-dummy-soundcard.sh
-  - cat ci-scripts/prepare-dummy-soundcard.sh
 
 env:
   global:

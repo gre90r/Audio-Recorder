@@ -20,9 +20,9 @@ class AudioFormatConfig {
 
   /* Audio Format */
   public static AudioFormat.Encoding encoding = AudioFormat.Encoding.PCM_SIGNED;
-  public static float sampleRate = 8000f; // in hertz
-  public static int sampleSizeBits = 8;
-  public static int channels = 1; // 1 for mono, 2 for stereo and so on
+  public static float sampleRate = 48000f; // in hertz
+  public static int sampleSizeBits = 16;
+  public static int channels = 2; // 1 for mono, 2 for stereo and so on
   public static int frameSize = 4;
   public static float frameRate = sampleRate;
   public static boolean bigEndian = false; // bit order
