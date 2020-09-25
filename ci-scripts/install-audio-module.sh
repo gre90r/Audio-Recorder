@@ -2,7 +2,14 @@
 
 export AUDIODEV=null
 
+sudo apt-get update -qq
+#sudo usermod -a -G audio travis
 sudo apt-get install -y portaudio19-dev
 sudo apt-get install -y libasound2-dev alsa-utils alsa-oss
 sudo apt-get install -y lame
 sudo apt-get install linux-modules-extra-$(uname -r)
+
+# print info about what audio formats are supported
+sudo arecord --dump-hw-params
+
+#sudo bash ci-scripts/prepare-dummy-soundcard.sh
