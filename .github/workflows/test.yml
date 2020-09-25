@@ -16,9 +16,17 @@ jobs:
 
     steps:
     - uses: actions/checkout@v2
+      
+      # install JDK
     - name: Set up JDK 11
       uses: actions/setup-java@v1
       with:
         java-version: 11
+    
+    # install audio module (needed to test AudioRecorder)
+    - name: Set up audio module
+      run: sudo apt-get install libasound2-dev alsa-utils alsa-oss
+   
+   # run tests
     - name: Test
       run: mvn -B test --file pom.xml
