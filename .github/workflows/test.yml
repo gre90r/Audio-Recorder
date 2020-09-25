@@ -25,8 +25,7 @@ jobs:
     
     # install audio module (needed to test AudioRecorder)
     - name: Set up audio module
-      run: sudo apt-get install libasound2-dev snd-dummy alsa-utils alsa-oss &&
-           arecord --dump-hw-params
+      run: ci-scripts/install-audio-module.sh
    
    # run tests
     - name: Test
