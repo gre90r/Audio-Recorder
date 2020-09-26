@@ -6,6 +6,7 @@ import de.gre90r.DreamAudioRecorder.config.StringsEN;
 import javax.sound.sampled.*;
 import java.io.File;
 import java.io.IOException;
+import java.util.Arrays;
 
 /**
  * records audio and saves it into a file.
