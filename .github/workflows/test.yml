@@ -23,10 +23,10 @@ jobs:
       with:
         java-version: 11
     
-    # install audio module (needed to test AudioRecorder)
+    # install audio module
 #    - name: Set up audio module
 #      run: ci-scripts/install-audio-module.sh
    
    # run tests
     - name: Test
-      run: mvn -B test --file pom.xml
+      run: mvn test --file pom.xml
