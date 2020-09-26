@@ -33,4 +33,12 @@ class AudioRecorderTest {
     audioRecorder.stopRecording();
   }
 
+  /**********************/
+  /* getAllAudioDevices */
+  /**********************/
+  @Test
+  public void getAllAudioDevices() {
+    assertNotNull(AudioRecorder.getAllAudioDevices());
+    AudioRecorder.displayAllAudioDevices();
+  }
 }

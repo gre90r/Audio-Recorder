@@ -128,4 +128,31 @@ public class AudioRecorder {
     this.targetDataLine.close();
   }
 
+  /**
+   * @return all audio formats which the system can play
+   */
+  public static Mixer.Info[] getAllAudioDevices() {
+    return AudioSystem.getMixerInfo();
+  }
+
+  public static void displayAllAudioDevices() {
+    Mixer.Info[] mixerInfoSet = getAllAudioDevices();
+    System.out.println("Mixers:");
+    for (Mixer.Info mixerInfo: mixerInfoSet) {
+      System.out.println("   " + mixerInfo.toString());
+      Mixer m = AudioSystem.getMixer(mixerInfo);
+      System.out.println("    Mixer: " + m.toString());
+      System.out.println("      Source lines");
+      Line.Info[] slines = m.getSourceLineInfo();
+      for (Line.Info s: slines) {
+        System.out.println("        " + s.toString());
+      }
+      Line.Info[] tlines = m.getTargetLineInfo();
+      System.out.println("      Target lines");
+      for (Line.Info t: tlines) {
+        System.out.println("        " + t.toString());
+      }
+    }
+  }
+
 }
