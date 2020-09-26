@@ -1,3 +1,4 @@
 #!/bin/sh
-mvn test
-firefox target/jacoco-report/index.html &
+mvn clean jacoco:prepare-agent test jacoco:report
+echo wait for firefox to open report...
+firefox target/site/jacoco/index.html &

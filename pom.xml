@@ -9,23 +9,20 @@
     <version>1.0-SNAPSHOT</version>
 
     <name>Dream Audio Recorder</name>
-    <description>Record audio on your computer</description>
-    <url>https://github.com/gre90r</url>
+    <description>Record audio on your computer. System sounds or microphone.</description>
+    <url>https://github.com/gre90r/Audio-Recorder</url>
 
     <properties>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+<!--        <java.version>1.8</java.version>-->
         <java.version>11</java.version>
+        <junit.version>5.5.2</junit.version>
         <maven.compiler.source>${java.version}</maven.compiler.source>
         <maven.compiler.target>${java.version}</maven.compiler.target>
         <app.entrypoint>de.gre90r.DreamAudioRecorder.DreamAudioRecorder</app.entrypoint>
     </properties>
 
     <dependencies>
-        <dependency>
-            <groupId>junit</groupId>
-            <artifactId>junit</artifactId>
-            <version>3.8.1</version>
-        </dependency>
         <dependency>
             <groupId>org.projectlombok</groupId>
             <artifactId>lombok</artifactId>
@@ -44,7 +41,13 @@
         <dependency>
             <groupId>org.junit.jupiter</groupId>
             <artifactId>junit-jupiter</artifactId>
-            <version>5.4.0</version>
+            <version>${junit.version}</version>
+            <scope>test</scope>
+        </dependency>
+        <dependency>
+            <groupId>org.junit.vintage</groupId>
+            <artifactId>junit-vintage-engine</artifactId>
+            <version>${junit.version}</version>
             <scope>test</scope>
         </dependency>
     </dependencies>
@@ -80,14 +83,6 @@
                 <plugin>
                     <artifactId>maven-surefire-plugin</artifactId>
                     <version>2.22.1</version>
-                    <configuration>
-                        <includes>
-                            <include>**/Test*.java</include>
-                            <include>**/*Test.java</include>
-                            <include>**/*Tests.java</include>
-                            <include>**/*TestCase.java</include>
-                        </includes>
-                    </configuration>
                 </plugin>
                 <plugin>
                     <artifactId>maven-jar-plugin</artifactId>
@@ -124,6 +119,7 @@
                     </configuration>
                     <executions>
                         <execution>
+                            <!-- execute with "mvn clean package assembly:single"-->
                             <id>make-assembly</id> <!-- this is used for inheritance merges -->
                             <phase>package</phase> <!-- bind to the packaging phase -->
                             <goals>
@@ -157,9 +153,14 @@
                     <version>0.8.6</version>
                     <executions>
                         <execution>
+                            <id>default-prepare-agent</id>
+                            <phase>pre-integration-test</phase>
                             <goals>
                                 <goal>prepare-agent</goal>
                             </goals>
+                            <configuration>
+                                <destFile>${basedir}/target/coverage-reports/jacoco-unit.exec</destFile>
+                            </configuration>
                         </execution>
                         <execution>
                             <id>report</id>
@@ -167,6 +168,16 @@
                             <goals>
                                 <goal>report</goal>
                             </goals>
+                        </execution>
+                        <execution>
+                            <id>jacoco-site</id>
+                            <phase>post-integration-test</phase>
+                            <goals>
+                                <goal>report</goal>
+                            </goals>
+                            <configuration>
+                                <dataFile>${basedir}/target/coverage-reports/jacoco-unit.exec</dataFile>
+                            </configuration>
                         </execution>
                     </executions>
                 </plugin>

@@ -1,5 +1,8 @@
+Github CI:
 ![Build](https://github.com/gre90r/Audio-Recorder/workflows/Build/badge.svg)
 ![Tests](https://github.com/gre90r/Audio-Recorder/workflows/Tests/badge.svg)
+
+Travis CI:
 [![Build Status](https://travis-ci.com/gre90r/Audio-Recorder.svg?branch=master)](https://travis-ci.com/gre90r/Audio-Recorder)
 
 # Dream Audio Recorder
@@ -14,9 +17,7 @@ sound is TODO*).
 *TODO: add Downloads*
 
 # 2 Dependencies
-* Java 11
-    * I used JDK 11 for development, but should also run with
-      Java 8. 
+* at least Java 8 required
 * Java Swing
 
 # 3 Build from source
@@ -29,11 +30,9 @@ sound is TODO*).
 * run: `./buildAndRun.sh`
 
 # 4 Run tests
-`./runTests.sh`
+run `./runTests.sh`
 
 # 5 Code Coverage report
-*TODO*
-
 run `codeCoverageReport.sh`
 
 # 6 Working with IntelliJ GUI Builder

@@ -2,5 +2,5 @@
 SQLite DB with JDBC
 -> save Settings in DB
 Selenium
-JaCoCo
 add linter hook to commit and push
+deploy into docker container
