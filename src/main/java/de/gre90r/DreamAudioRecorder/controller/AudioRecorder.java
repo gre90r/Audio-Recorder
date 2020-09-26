@@ -171,7 +171,7 @@ public class AudioRecorder {
       for (float sampleRate : AudioConfigManager.SUPPORTED_SAMPLE_RATES) {
         for (int sampleSizeInBits : AudioConfigManager.SUPPORTED_SAMPLE_SIZE_IN_BITS) {
           for (int channels : AudioConfigManager.SUPPORTED_CHANNELS) {
-            for (int frameSize : AudioConfigManager.SUPPORTED_FRAME_SIZE) {
+            for (int frameSize : AudioConfigManager.SUPPORTED_FRAME_SIZES) {
 
               audioFormat = new AudioFormat(
                       encoding,

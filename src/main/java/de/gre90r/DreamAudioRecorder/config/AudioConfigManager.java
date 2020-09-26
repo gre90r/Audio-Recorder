@@ -17,7 +17,7 @@ public class AudioConfigManager {
           8000.0f, 11025.0f, 16000.0f, 22050.0f, 44100.0f, 48000.0f, 96000.0f, 192000.0f);
   public static final List<Integer> SUPPORTED_SAMPLE_SIZE_IN_BITS = Arrays.asList(8, 16, 24);
   public static final List<Integer> SUPPORTED_CHANNELS = Arrays.asList(1, 2, 4, 8);
-  public static final List<Integer> SUPPORTED_FRAME_SIZE = Arrays.asList(1, 2, 4, 8, 16, 24, 32);
+  public static final List<Integer> SUPPORTED_FRAME_SIZES = Arrays.asList(1, 2, 4, 8, 16, 24, 32);
 
   /**********/
   /* setter */
@@ -66,9 +66,11 @@ public class AudioConfigManager {
     }
   }
 
-  private static boolean isValidSampleSizeBits(int sampleSizeBits) {
-    if (sampleSizeBits == 8 || sampleSizeBits == 16) {
-      return true;
+  private static boolean isValidSampleSizeBits(int sampleSizeInBits) {
+    for (int sssib : SUPPORTED_SAMPLE_SIZE_IN_BITS) {
+      if (sampleSizeInBits == sssib) {
+        return true;
+      }
     }
     return false;
   }
@@ -86,8 +88,10 @@ public class AudioConfigManager {
   }
 
   private static boolean isValidChannels(int channels) {
-    if (channels == 1 || channels == 2) {
-      return true;
+    for (int supportedChannels : SUPPORTED_CHANNELS) {
+      if (channels == supportedChannels) {
+        return true;
+      }
     }
     return false;
   }
@@ -101,8 +105,10 @@ public class AudioConfigManager {
   }
 
   private static boolean isValidFrameSize(int frameSize) {
-    if (frameSize == 4) {
-      return true;
+    for (int supportedFrameSize : SUPPORTED_FRAME_SIZES) {
+      if (frameSize == supportedFrameSize) {
+        return true;
+      }
     }
     return false;
   }
