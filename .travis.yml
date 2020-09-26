@@ -22,4 +22,5 @@ env:
 
 # command to run tests
 script:
-  - mvn -B test --file pom.xml
+  - mvn test --file pom.xml
+  - mvn clean verify
