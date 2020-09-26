@@ -2,7 +2,11 @@ package de.gre90r.DreamAudioRecorder.controller;
 
 import org.junit.jupiter.api.Test;
 
+import javax.sound.sampled.AudioFormat;
 import javax.sound.sampled.LineUnavailableException;
+import javax.sound.sampled.Mixer;
+
+import java.util.List;
 
 import static org.junit.jupiter.api.Assertions.*;
 
@@ -38,7 +42,23 @@ class AudioRecorderTest {
   /**********************/
   @Test
   public void getAllAudioDevices() {
-    assertNotNull(AudioRecorder.getAllAudioDevices());
-    AudioRecorder.displayAllAudioDevices();
+    Mixer.Info[] mixerInfoSet = AudioRecorder.getAllAudioDevices();
+    System.out.println("audio devices on your system:");
+    System.out.println("=============================");
+    AudioRecorder.displayAllAudioDevices(mixerInfoSet);
+    assertNotNull(mixerInfoSet);
   }
+
+  /*******************************/
+  /* getAllSupportedAudioFormats */
+  /*******************************/
+  @Test
+  public void getAllSupportedAudioFormats() {
+    List<AudioFormat> audioFormats = AudioRecorder.getAllSupportedAudioFormats();
+    System.out.println("supported audio formats on your system:");
+    System.out.println("=======================================");
+    AudioRecorder.printAudioFormats(audioFormats);
+    assertNotNull(audioFormats);
+  }
+
 }
