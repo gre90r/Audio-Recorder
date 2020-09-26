@@ -27,6 +27,6 @@ jobs:
 #    - name: Set up audio module
 #      run: ci-scripts/install-audio-module.sh
    
-   # run tests
+   # run tests (excluded tests which require audio module)
     - name: Test
-      run: mvn test --file pom.xml
+      run: mvn test -Dtest=!AudioRecorderTest --file pom.xml

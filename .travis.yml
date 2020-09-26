@@ -6,20 +6,22 @@ jdk:
   - openjdk11
 
 # command to install dependencies
-before_install:
-  # install audio module
-  - sudo apt-get update -qq
-  - sudo usermod -a -G audio travis
-  - sudo apt-get install -y portaudio19-dev
-  - sudo apt-get install -y libasound2-dev alsa-utils alsa-oss
-  - sudo apt-get install -y lame
-  - sudo apt-get install linux-modules-extra-$(uname -r)
-  - sudo bash ci-scripts/prepare-dummy-soundcard.sh
+#before_install:
+#   install audio module
+#  - sudo apt-get update -qq
+#  - sudo usermod -a -G audio travis
+#  - sudo apt-get install -y portaudio19-dev
+#  - sudo apt-get install -y libasound2-dev alsa-utils alsa-oss
+#  - sudo apt-get install -y lame
+#  - sudo apt-get install linux-modules-extra-$(uname -r)
+#  - sudo bash ci-scripts/prepare-dummy-soundcard.sh
 
-env:
-  global:
-    AUDIODEV=null
+#env:
+#  global:
+#    AUDIODEV=null
 
 # command to run tests
 script:
-  - mvn test --file pom.xml
+  # run all tests except AudioRecorderTest because CI does not have
+  # audio module.
+  - mvn test -Dtest=!AudioRecorderTest --file pom.xml
