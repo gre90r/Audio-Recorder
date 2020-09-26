@@ -1,7 +1,7 @@
 language: java
 dist: xenial
 os: linux
-sudo: required
+sudo: false
 jdk:
   - openjdk11
 
