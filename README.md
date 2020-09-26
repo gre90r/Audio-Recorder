@@ -32,6 +32,8 @@ sound is TODO*).
 # 4 Run tests
 run `./runTests.sh`
 
+This runs audio tests which are excluded in CI.
+
 # 5 Code Coverage report
 run `codeCoverageReport.sh`
 
@@ -41,5 +43,8 @@ sure, that all GUI Builder code is inside your source file. Go to
 *File > Settings > Editor > GUI Designer > Generate GUI into: 
 Java source code*.
 
-# 7 License
+# 7 display all supported audio formats on your system
+
+
+# 8 License
 TODO: check license for mp3 library when implementing it.

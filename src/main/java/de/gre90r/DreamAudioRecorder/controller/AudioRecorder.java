@@ -161,6 +161,8 @@ public class AudioRecorder {
    * @return list of all working audio formats for that system.
    */
   public static List<AudioFormat> getAllSupportedAudioFormats() {
+    System.out.println(StringsEN.TESTING_ALL_AUDIO_FORMAT_COMBINATIONS);
+
     List<AudioFormat> supportedAudioFormats = new ArrayList<>();
     AudioFormat audioFormat;
 
@@ -198,6 +200,7 @@ public class AudioRecorder {
    * @param audioFormats audio formats to display
    */
   public static void printAudioFormats(List<AudioFormat> audioFormats) {
+    System.out.println(StringsEN.SUPPORTED_AUDIO_FORMATS + ":");
     audioFormats.forEach(audioFormat -> {
       System.out.print("{ ");
       System.out.print(audioFormat.getEncoding().toString() + ", ");
