@@ -8,7 +8,7 @@ CONTAINER_NAME=audio-recorder
 # change to directoy where Dockerfile is
 cd ..
 # -t means tag. name of the container
-docker build -t $CONTAINER_NAME .
+docker build -t $CONTAINER_NAME --name $CONTAINER_NAME .
 # remove old docker container
 docker rm -f $CONTAINER_NAME
 
