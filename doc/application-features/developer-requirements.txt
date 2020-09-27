@@ -1,6 +1,9 @@
 
-SQLite DB with JDBC
--> save Settings in DB
+DB
+    -> SQLite DB with JDBC
+    -> save Settings, Recordings in DB
 Selenium
-add linter hook to commit and push
-deploy into docker container
+linter
+    -> add linter hook to commit and push
+docker
+    -> deploy into docker container
