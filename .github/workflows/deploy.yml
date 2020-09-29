@@ -14,13 +14,13 @@ jobs:
     steps:
       - name: Check out repo
         uses: actions/checkout@v2
-      - name: build docker container
-        run: ci-scripts/buildDockerContainer.sh
+      #- name: build docker container
+      #  run: ci-scripts/buildDockerContainer.sh
       - name: Push to GitHub Packages
-        uses: docker/build-push-action@v1
+        uses: docker/build-push-action@v2
         with:
           username: ${{ github.actor }}
           password: ${{ secrets.GITHUB_TOKEN }}
           registry: docker.pkg.github.com
-          repository: gre90r/Audio-Recorder/audio-recorder
+          repository: gre90r/audio-Recorder/audio-recorder
           tag_with_ref: true
