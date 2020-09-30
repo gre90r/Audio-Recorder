@@ -1,6 +1,7 @@
-| Github CI | ![Build](https://github.com/gre90r/Audio-Recorder/workflows/Build/badge.svg) ![Tests](https://github.com/gre90r/Audio-Recorder/workflows/Tests/badge.svg) ![Deploy](https://github.com/gre90r/Audio-Recorder/workflows/Deploy/badge.svg) |
+|           |                                                                                                                                                                                                                                          |
 |-----------|------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
-| Travis CI | [![Build Status](https://travis-ci.com/gre90r/Audio-Recorder.svg?branch=master)](https://travis-ci.com/gre90r/Audio-Recorder)                                                                                                            |
+| Github CI | ![Build](https://github.com/gre90r/Audio-Recorder/workflows/Build/badge.svg) ![Tests](https://github.com/gre90r/Audio-Recorder/workflows/Tests/badge.svg) ![Deploy](https://github.com/gre90r/Audio-Recorder/workflows/Deploy/badge.svg) |
+| Travis CI | [![Build Status](https://travis-ci.com/gre90r/Audio-Recorder.svg?branch=master)](https://travis-ci.com/gre90r/Audio-Recorder)                                                                                                            |                                                                                                           |
 
 # Dream Audio Recorder
 Record audio on your computer. On default, it listens to your
